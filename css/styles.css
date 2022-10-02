@@ -1,0 +1,414 @@
+/*@media screen and (min-width: 1260px) {*/
+/*@media screen and (max-width: 1260px) {*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #1b1b1b;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.title-box {
+    background-color: white;
+    position: absolute;
+    z-index: 999;
+    padding: 50px;
+    top: 180px;
+    box-shadow: -13px 13px 2px 1px rgba(0, 0, 0, .2);
+}
+
+header h1{
+    font-size: 80px;
+    text-align: center;
+}
+
+header p {
+    font-size: 25px;
+    text-align: center;
+}
+
+header h1, header p, li, h2 {
+    font-family: 'Kenia', cursive;
+}
+
+/* slider */
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: calc(500px * 4);
+    max-height: 720px;
+    animation: glisse 40s infinite ease;
+}
+
+.slide {
+    opacity: 0.5;
+}
+
+.slide img {
+    width: 100vw;
+    height: auto;
+}
+
+@keyframes glisse{
+
+    0% {
+        transform: translateX(0);
+    }
+
+    3% {
+        transform: translateX(0);
+    }
+
+    17% {
+        transform: translateX(-100vw);
+    }
+
+    20% {
+        transform: translateX(-100vw);
+    }
+
+    33% {
+        transform: translate(-200vw);
+    }
+
+    36% {
+        transform: translate(-200vw);
+    }
+
+    50% {
+        transform: translateX(-300vw);
+    }
+
+    53% {
+        transform: translateX(-300vw);
+    }
+
+    67% {
+        transform: translateX(-200vw);
+    }
+
+    70% {
+        transform: translateX(-200vw);
+    }
+
+    83% {
+        transform: translateX(-100vw);
+    }
+
+    86% {
+        transform: translateX(-100vw);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
+}
+
+/* navigation menu */
+
+.section-menu {
+    justify-content: center;
+    top: -130px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 180px;
+}
+
+nav.menu {
+    width: 100%;
+    position: absolute;
+    top: 570px;
+}
+
+nav.menu ul {
+    display: flex;
+    flex-direction: row;
+}
+
+nav.menu ul li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s all;
+}
+
+nav.menu ul li:hover {
+    transform: scale(0.90);
+    transition: 0.3s all;
+}
+
+nav.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 50px;
+}
+
+.nav-item {
+    flex: 1;
+    height: 25vw;
+    max-height: 300px;
+}
+
+.pizza {
+    background: url(../images/pizza-banner.jpg) 100%;
+}
+
+.salade {
+    background: url(../images/salad-banner.jpg) 100%;
+}
+
+.burger {
+    background: url(../images/burger-banner.jpg) 100%;
+}
+
+.boisson {
+    background: url(../images/boisson-banner.jpg) 100%;
+}
+
+.section-carte {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* sections plats */
+
+.item {
+    background-color: white;
+    margin: 20px;
+    display: flex;
+    cursor: pointer;
+    transition: 0.3s all;
+    width: 50%;
+    min-width: 530px ;
+}
+
+.item:hover {
+    transform: scale(1.1);
+    transition: 0.3s all;
+}
+
+.item:hover {
+    transition: 0.3s all;
+    box-shadow: -8px 8px 2px 1px rgba(0, 0, 0, .1);
+}
+
+.item-infos {
+    padding: 20px;
+    line-height: 40px;
+}
+
+section {
+    padding: 100px;
+    font-family: 'Martel', serif;
+    
+    /* pour que l'on ait pas de bug
+    quand on clique sur un bouton
+    menant à la section */
+    margin-top: 1px !important; 
+}
+
+.section-header {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: 0 -5px rgb(89, 89, 89);
+    border-top: solid 5px white;
+    border-bottom: solid 5px white;
+}
+
+.section-header::before {
+    content: '';
+    display : block;
+    height : 0;
+    width : 0;
+    border-top : 25px solid transparent;
+    border-left : 50px solid white;
+    margin-right: 10px;
+    z-index: 0;
+}
+
+.section-header h2 {
+    font-size: 50px;
+}
+
+.section-header-pizza {
+    background-color: #ae500d;
+}
+.section-header-salade {
+    background-color: #0b5e00;
+}
+.section-header-burger {
+    background-color: #462a00;
+}
+.section-header-boisson {
+    background-color: #b89c00;
+}
+
+.section-header-plan {
+    position: relative;
+    background-color: #ffffff;
+    color: black;
+}
+
+.section-active {
+    position: fixed;
+    width: 100%;
+    top: 0vh;
+    z-index: 9999;
+}
+
+.item-infos h3 {
+    font-size: 25px;
+}
+.item-infos hr {
+    margin: 10px 0 10px 0;
+    opacity: 0.5;
+}
+
+p.prix {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+section img {
+    width: 300px;
+    object-fit: cover;
+}
+
+/* menu bloqué à droite */
+
+.section-menu.sticky {
+    position: fixed;
+    width: 30vw;
+    top: -40vh;
+    right: 50px;
+    transition: 0.6s all;
+    z-index: 1000;
+}
+
+.sticky + #main {
+    padding-top: 200px;
+}
+
+.sticky nav.menu ul {
+    flex-direction: column;
+}
+
+.sticky, nav.menu ul li {
+    margin: 2px;
+}
+
+/* pied de page */
+.map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+iframe {
+    width: 70%;
+    margin: 30px;
+    border-radius: 10px;
+}
+
+.a-bientot {
+    display: flex;
+    position: relative;
+    height: fit-content;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.bye-card {
+    font-size: 30px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+footer p {
+    font-size: 22px;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-family: 'Martel', serif;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+    .item {
+        width: 100%;
+    }
+    nav.menu {
+        top: calc(450px + 6vw)
+    }
+    
+    .section-menu.sticky {
+        width: 99.5%;
+        top: calc(100vh - 90px);
+        left: 0;
+    }
+
+    .sticky nav.menu {
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .sticky nav.menu ul {     
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .sticky nav.menu li {
+        height: 80px;
+        width: calc(100% / 4 - 20px / 5);
+    }
+}
+
+
+@media screen and (max-width: 760px) {
+    nav.menu {
+        top: calc(345px + 15vw)
+    }
+    .item {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+    .item img {
+        width: 100%;
+        height: auto;
+    }
+}
